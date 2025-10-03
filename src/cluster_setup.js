@@ -1,10 +1,11 @@
 import cluster from 'cluster';
 import { executeServer } from './server.js';
+import os from 'os';
 
-const CPUsAvailable = require('os').cpus().length;
+const CPUsAvailable = os.cpus().length;
 
 export const executeClusterMode = () => {
-    if (cluster.isMaster){
+    if (cluster.isPrimary){
         console.log(`Cantidad de CPU's: ${CPUsAvailable}`);
         console.log(`PID del proceso padre: ${process.pid}`);
 
