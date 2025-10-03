@@ -1,2 +1,2 @@
 node_modules
-/src/Actions/Registry/db/actionsRegistry.json
+src/ActionsRegistry/db/actionsRegistry.json
