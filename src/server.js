@@ -11,6 +11,6 @@ export const executeServer = (port = 3000) => {
     });
 
     server.listen(port, () => {
-        console.log(`Servidor ejecutandose en http://localhost${port}`);
+        console.log(`Servidor ejecutandose en http://localhost:${port}`);
     });
 }
