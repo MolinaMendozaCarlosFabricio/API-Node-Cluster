@@ -43,5 +43,10 @@
     "actor": "Sofia",
     "action": "Fue a la univeresidad",
     "date": "4/10/2025"
+  },
+  {
+    "actor": "Ismael",
+    "action": "No fue a la univeresidad",
+    "date": "4/10/2025"
   }
 ]
