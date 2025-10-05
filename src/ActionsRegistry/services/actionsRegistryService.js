@@ -32,15 +32,19 @@ class ActionsRegistryService {
     }
 
     async addAction(action) {
+        let lockAcquired = false;
         try {
             await lockfile.lock(filePath, { retries: { retries: 5, factor: 1.2, minTimeout: 100 } });
-            
+            lockAcquired = true;
+
             const allActions = await this.getActions();
             allActions.push(action);
             await fs.writeFile(filePath, JSON.stringify(allActions, null, 2));
             
         } finally {
-            await lockfile.unlock(filePath);
+            if (lockAcquired) {
+                await lockfile.unlock(filePath);
+            }
         }
     }
 }
