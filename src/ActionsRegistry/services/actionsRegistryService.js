@@ -5,7 +5,7 @@ import lockfile from 'proper-lockfile';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, '../../../db/actionsRegistry.json');
+const filePath = path.join(__dirname, '../db/actionsRegistry.json');
 
 class ActionsRegistryService {
     static instance;
